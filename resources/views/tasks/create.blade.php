@@ -50,7 +50,7 @@
                     <!-- Task Due Date Input -->
                     <div class="form-group mb-3">
                         <label for="due_date" class="form-label">Due Date</label>
-                        <input type="date" class="form-control @error('due_date') is-invalid @enderror" name="due_date" id="due_date" value="{{ old('due_date') }}" required>
+                        <input type="date" class="form-control @error('due_date') is-invalid @enderror" name="due_date" id="due_date" value="{{ old('due_date') }}" min="{{ date('Y-m-d') }}" required>
                         @error('due_date')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
