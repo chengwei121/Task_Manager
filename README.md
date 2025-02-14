@@ -3,7 +3,10 @@
 ## Overview
 TaskFlow is a modern, user-friendly task management system built with Laravel that helps users organize, track, and manage their tasks efficiently. With its intuitive interface and powerful features, TaskFlow makes task management seamless and productive.
 
-![TaskFlow Dashboard](public/images/task_management.png)
+<div align="center">
+  <img src="public/images/dashboard.png" alt="TaskFlow Dashboard" width="100%" style="max-width: 1200px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+  <p><em>TaskFlow Dashboard - Modern and Intuitive Task Management Interface</em></p>
+</div>
 
 ## Features
 
