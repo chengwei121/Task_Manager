@@ -9,9 +9,20 @@
                 <h2>Edit Task</h2>
             </div>
             <div class="card-body">
-                <form action="{{ route('tasks.update', $task->id) }}" method="POST">
+                <form action="{{ route('tasks.update', $task->id) }}" method="POST" id="updateTaskForm">
                     @csrf
                     @method('PUT')
+
+                    <!-- Add this for debugging -->
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
 
                     <!-- Task Title Input -->
                     <div class="form-group mb-3">
@@ -40,8 +51,12 @@
                         @enderror
                     </div>
 
-                    <!-- Submit Button -->
-                    <button type="submit" class="btn btn-success">Update Task</button>
+                    <!-- Update Submit Button -->
+                    <button type="button" class="btn btn-success" id="updateBtn" onclick="confirmUpdate()">Update Task</button>
+                    <button type="button" class="btn btn-success d-none" id="loadingBtn" disabled>
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        Please wait...
+                    </button>
                     <a href="{{ route('tasks.index') }}" class="btn btn-secondary">Back to Task List</a>
                 </form>
             </div>
@@ -49,4 +64,19 @@
     </div>
     <br>
     <br>
+
+    @push('scripts')
+    <script>
+    function confirmUpdate() {
+        if (confirm('Are you sure you want to update this task?')) {
+            // Show loading button and hide update button
+            document.getElementById('updateBtn').classList.add('d-none');
+            document.getElementById('loadingBtn').classList.remove('d-none');
+            
+            // Submit the form
+            document.getElementById('updateTaskForm').submit();
+        }
+    }
+    </script>
+    @endpush
 @endsection

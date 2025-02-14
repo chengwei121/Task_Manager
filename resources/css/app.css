@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Header Styles */
+header {
+    @apply bg-gray-100 border-b border-gray-300; /* Tailwind classes for background and border */
+}
+
+.navbar-brand h1 {
+    @apply font-serif text-2xl; /* Tailwind utility classes for font family and size */
+}
+
+.nav-link {
+    @apply text-base text-gray-800; /* Tailwind utilities for font size and color */
+}
+
+.nav-link:hover {
+    @apply text-blue-600; /* Tailwind utility for hover color */
+}
+
+.form-control {
+    @apply max-w-xs; /* Tailwind utility for maximum width */
+}
+
+/* Footer Styles */
+footer {
+    @apply bg-gray-800 text-white py-5; /* Tailwind utilities for background, text color, and padding */
+}
+
+/* Footer Heading */
+footer h5 {
+    @apply text-lg font-bold mb-4; /* Tailwind utilities for heading size and margin */
+}
+
+/* Footer Links */
+footer a {
+    @apply text-gray-400 no-underline; /* Tailwind utility for link color */
+}
+
+footer a:hover {
+    @apply text-white; /* Tailwind utility for hover effect */
+}
+
+/* Footer Text and List Items */
+footer p, footer ul {
+    @apply text-sm; /* Tailwind utility for text size */
+}
+
+/* Unordered List Reset */
+footer ul {
+    @apply list-none p-0; /* Tailwind utilities for list reset */
+}
+
+/* List Item Spacing */
+footer ul li {
+    @apply mb-2; /* Tailwind utility for margin */
+}
+
+/* Social Media Icons (FontAwesome) */
+footer .fab {
+    @apply text-lg; /* Tailwind utility for icon size */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    footer h5 {
+        @apply text-base; /* Reduce font size */
+    }
+
+    footer p, footer ul {
+        @apply text-sm; /* Adjust text size for smaller screens */
+    }
+
+    footer ul li {
+        @apply mb-2; /* Adjust margin for list items */
+    }
+
+    /* Center text and icons on mobile */
+    footer .container {
+        @apply text-center; /* Center text for smaller devices */
+    }
+
+    footer ul {
+        @apply flex justify-center p-0; /* Center list items */
+    }
+
+    footer ul li {
+        @apply mx-2; /* Space between list items */
+    }
+}
+
+/* Extra small screens (max-width: 576px) */
+@media (max-width: 576px) {
+    footer h5 {
+        @apply text-sm; /* Further reduce font size */
+    }
+
+    footer p, footer ul {
+        @apply text-xs; /* Smaller text for very small screens */
+    }
+
+    footer ul li {
+        @apply mb-1; /* Adjust margin for very small screens */
+    }
+
+    /* Stack list items vertically on very small screens */
+    footer ul {
+        @apply flex-col; /* Stack items vertically */
+    }
+
+    footer ul li {
+        @apply my-1; /* Vertical margin for stacked items */
+    }
+}

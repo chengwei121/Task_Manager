@@ -3,47 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Task Reminder</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 15px;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #555;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+                padding: 10px;
+            }
+        }
+    </style>
 </head>
-<body style="background-color: #f4f4f4;">
-
+<body>
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <!-- Email Container -->
-                <div class="card my-4">
-                    
-                    <!-- Header -->
-                    <div class="card-header bg-primary text-white text-center">
-                        <h1>Task Reminder</h1>
-                    </div>
-                    
-                    <!-- Body Content -->
-                    <div class="card-body">
-                        <p class="lead">Hi,</p>
-                        <p>{{ $messageContent }}</p>
-                        
-                        <!-- Call to Action Button -->
-                        <div class="text-center my-4">
-                            <a href="{{ $taskLink }}" class="btn btn-success btn-lg">View Task</a>
-                        </div>
-                    </div>
-
-                    <!-- Footer -->
-                    <div class="card-footer text-center text-muted">
-                        &copy; 2024 Task Manager. All rights reserved.
-                    </div>
-                </div>
-            </div>
-        </div>
+        <h1>Task Reminder</h1>
+        <p>{{ $messageContent }}</p>
     </div>
-
-    <!-- Bootstrap JS (Optional) -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 </body>
 </html>
